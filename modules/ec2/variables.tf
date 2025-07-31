@@ -6,9 +6,7 @@ variable "ami_id"{
 }
 variable "subnet_id"{
     type = string
-    default = module.vpc.subnet_id
 }
 variable "vpc_security_group"{
     type = string
-    default = module.vpc.vpc_security_group
 }
