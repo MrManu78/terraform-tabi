@@ -4,3 +4,6 @@ output "vpc_security_group" {
 output "vpc_id" {
     value = aws_vpc.terraform-project-vpc.id
 }
+output "subnet_id" {
+    value = aws_subnet.terraform_project_subnet.id
+}
