@@ -1,6 +1,9 @@
 module "ec2" {
   source = "./modules/ec2"
 
-  ami_id        = var.ami_id
+  ami_id = var.ami_id
   instance_type = var.instance_type
+}
+module "vpc" {
+  source = "./modules/vpc"
 }
