@@ -8,3 +8,7 @@ module "ec2" {
 module "vpc" {
   source = "./modules/vpc"
 }
+module "keypair_terraform_project" {
+  source = "./modules/ssh"
+  public_key = var.public_key
+}
