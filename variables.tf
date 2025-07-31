@@ -9,9 +9,3 @@ variable "instance_type" {
 variable "ami_id" {
     type = string 
 }
-variable "subnet_id"{
-    type = string
-}
-variable "vpc_security_group"{
-    type = string
-}

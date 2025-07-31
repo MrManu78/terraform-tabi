@@ -7,11 +7,12 @@ resource "aws_subnet" "terraform_project_subnet" {
   }
 }
 resource "aws_vpc" "terraform-project-vpc" {
+    cidr_block = var.vpc_cidr
     tags = {
       Name = "terraform-project-vpc"
     }
 }
-resource "aws_security_group" "allow_ssh" {
+resource "aws_security_group" "sg-terrraform" {
     name = "allow_ssh_terraform_project"
     description = "Allow SSH inbound traffic"
     vpc_id = aws_vpc.terraform-project-vpc.id
