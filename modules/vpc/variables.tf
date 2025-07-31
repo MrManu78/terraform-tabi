@@ -6,3 +6,7 @@ variable "allow_all_cidr"{
     type = list(string)
     default = ["0.0.0.0/0"]
 }
+variable "subnet_cidr" {
+    type =  string
+    default = "10.0.1.0/24"
+}

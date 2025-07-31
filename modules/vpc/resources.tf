@@ -1,3 +1,11 @@
+resource "aws_subnet" "terraform_project_subnet" {
+  vpc_id                  = aws_vpc.terraform-project-vpc.id
+  cidr_block              = var.subnet_cidr
+
+  tags = {
+    Name = "terraform-project-subnet"
+  }
+}
 resource "aws_vpc" "terraform-project-vpc" {
     tags = {
       Name = "terraform-project-vpc"
@@ -6,6 +14,8 @@ resource "aws_vpc" "terraform-project-vpc" {
 resource "aws_security_group" "allow_ssh" {
     name = "allow_ssh_terraform_project"
     description = "Allow SSH inbound traffic"
+    vpc_id = aws_vpc.terraform-project-vpc.id
+
 
 ingress {
     from_port = 22
