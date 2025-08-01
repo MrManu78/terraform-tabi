@@ -37,3 +37,11 @@ egress {
     cidr_blocks = var.allow_all_cidr
     }
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.terraform-project-vpc.id
+ 
+  tags = {
+    Name = "Gateway-projet-terraform"
+  }
+}
