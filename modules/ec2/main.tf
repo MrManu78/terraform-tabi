@@ -4,6 +4,7 @@ resource "aws_instance" "Instance1" {
   subnet_id                   = var.subnet_id
   associate_public_ip_address = true
   vpc_security_group_ids      = [var.vpc_security_group]
+  key_name = var.key_name
 
   tags = {
     Name = "Instance1"
