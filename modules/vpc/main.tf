@@ -50,11 +50,15 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.terraform-project-vpc.id
  
   route {
-    cidr_block = var.vpc_cidr
+    cidr_block = var.default_route_cidr
     gateway_id = aws_internet_gateway.igw.id
   }
  
   tags = {
     Name = "route-table-terraform-project"
   }
+}
+resource "aws_route_table_association" "public_association" {
+  subnet_id      = aws_subnet.terraform_project_subnet.id
+  route_table_id = aws_route_table.public.id
 }
